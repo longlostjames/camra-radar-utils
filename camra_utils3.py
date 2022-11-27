@@ -109,7 +109,7 @@ def recalibrate(ncfile,zedcal,zdrcal):
 
     history = caltimestr + (" - user:" + user
         + " machine: " + socket.gethostname()
-        + " program: camra_utils.py recalibrate_netcdf_camra"
+        + " program: camra_utils.recalibrate_netcdf_camra"
         + " version:" + str(module_version) + " arguments: "
         + ncfile + " " + str(zedcal) + " " + str(zdrcal) + "\n")
 #        + str(pdpcal) + " " + str(ldrcal) + "\n")
@@ -172,7 +172,7 @@ def classify_clutter(ncfile,ldrmax):
 
     history = modtimestr + (" - user:" + user
         + " machine: " + socket.gethostname()
-        + " program: camra_utils.py classify_clutter" + " version:"
+        + " program: camra_utils.classify_clutter" + " version:"
         + str(module_version) + " arguments: " + ncfile
         + " " + str(ldrmax) + "\n")
 
@@ -282,7 +282,7 @@ def clean_distant_gates(ncfile):
 
     history = reproctimestr + (" - user:" + user
         + " machine: " + socket.gethostname()
-        + " program: camra_utils.py clean_distant_gates"
+        + " program: camra_utils.clean_distant_gates"
         + " version:" + str(module_version))
 
     print(size(pdp[:,0]))
@@ -336,7 +336,7 @@ def update_metadata(ncfile):
 
     history = updttimestr + (" - user:" + user
     + " machine: " + socket.gethostname()
-    + " program: camra_utils.py update_metadata"
+    + " program: camra_utils.update_metadata"
     + " version:" + str(module_version))
 
     nc.history += "\n" + history
@@ -414,7 +414,7 @@ def subtract_noise_polar(ncfile,nezh,nezv,nezhv,threshold):
 
     history = reproctimestr + (" - user:" + user
     + " machine: " + socket.gethostname()
-    + " program: camra_utils.py subtract_noise_polar"
+    + " program: camra_utils.subtract_noise_polar"
     + " {} {} {} {}".format(nezh, nezv, nezhv,  thresh)
     + " version:" + str(module_version))
 
@@ -449,7 +449,7 @@ def apply_phidp_offset(ncfile,phidp_offset):
 
     history = reproctimestr + (" - user:" + user
     + " machine: " + socket.gethostname()
-    + " program: camra_utils.py apply_phidp_offset"
+    + " program: camra_utils.apply_phidp_offset"
     + " {}".format(phidp_offset)
     + " version:" + str(module_version))
 
@@ -504,7 +504,7 @@ def clean(ncfile):
 
     history = reproctimestr + (" - user:" + user
         + " machine: " + socket.gethostname()
-        + " program: camra_utils.py clean"
+        + " program: camra_utils.clean"
         + " version:" + str(module_version))
 
     dataset.history += "\n" + history
@@ -550,7 +550,7 @@ def doubleclean(ncfile):
 
     history = reproctimestr + (" - user:" + user
         + " machine: " + socket.gethostname()
-        + " program: camra_utils.py doubleclean"
+        + " program: camra_utils.doubleclean"
         + " version:" + str(module_version))
 
     dataset.history += "\n" + history
@@ -718,7 +718,7 @@ def create_processed_file(infile):
 
     history = proctimestr + (" - user:" + user
         + " machine: " + socket.gethostname()
-        + " program: camra_utils.py create_processed_file"
+        + " program: camra_utils.create_processed_file"
         + " version:" + str(module_version))
 
     # ---------------------------
