@@ -317,7 +317,7 @@ def read_camra_raw(filename, **kwargs):
     else:
         print("ZED_H does not exist")
 
-     if "ZED_V" in ncvars:
+    if "ZED_V" in ncvars:
         field_name = fields_keymap['ZED_V']
         field_dic = filemetadata(field_name)
         field_dic['_FillValue'] = get_fillvalue();
