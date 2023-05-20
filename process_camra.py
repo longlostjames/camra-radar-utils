@@ -3,7 +3,7 @@ import getopt, sys, os
 import datetime
 
 #sys.path.append('/home/users/cjwalden/my-packages')
-import kepler_utils as kepler
+import camra_utils as camra
 
 try:
     opts, args = getopt.getopt(sys.argv[1:], "d:i:o:c:", ["date=","inpath=","outpath="])
@@ -20,11 +20,8 @@ tracking_tag = 'AMOF_20220922221548';
 
 campaign = 'woest';
 
-
-yaml_project_file = '/Users/cw66/git/kepler-radar-utils/amof_projects.yml'
-yaml_instrument_file = '/Users/cw66/git/kepler-radar-utils/amof_radars.yml'
-
-
+yaml_project_file = '/Users/cw66/campaigns/woest/amof_projects.yml'
+yaml_instrument_file = '/Users/cw66/campaigns/woest/amof_radars.yml'
 
 
 for o, a in opts:
@@ -39,12 +36,12 @@ for o, a in opts:
     else:
         assert False, "unhandled option"
 
-inpath = '/Users/cw66/Data/woest/radar-kepler/'
-#inpath = os.path.join('/gws/pw/j07/ncas_obs_vol2/cao/raw_data/ncas-radar-mobile-ka-band-1/data/campaign',campaign,'mom');
-outpath = '/Users/cw66/Data/ncas-mobile-radar-ka-band-1/'
-#outpath = os.path.join('/gws/pw/j07/ncas_obs_vol2/cao/processing/ncas-radar-mobile-ka-band-1',campaign);
+inpath = '/Users/cw66/Data/woest/radar-camra/'
+#inpath = os.path.join('/gws/pw/j07/ncas_obs_vol2/cao/raw_data/ncas-radar-camra-1/data/campaign',campaign,'mom');
+outpath = '/Users/cw66/Data/ncas-radar-camra-1/'
+#outpath = os.path.join('/gws/pw/j07/ncas_obs_vol2/cao/processing/ncas-radar-camra-1',campaign);
 
 print(tracking_tag);
 
-kepler.process_kepler(datestr,inpath,outpath,yaml_project_file,yaml_instrument_file,tracking_tag);
+camra.process_camra(datestr,inpath,outpath,yaml_project_file,yaml_instrument_file,tracking_tag);
 
