@@ -200,7 +200,7 @@ def read_camra_raw(filename, **kwargs):
 #  :radar_constant = 64.7f; // float
 #  :receiver_gain = 45.5f; // float
 #  :cable_losses = 4.8f; // float
-}
+
     variables = list(variables_keymap.keys())
 
     # --------
