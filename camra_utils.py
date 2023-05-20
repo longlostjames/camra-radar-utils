@@ -534,7 +534,7 @@ def read_camra_raw(filename, **kwargs):
     if "prf" in ncvars:
         dic = filemetadata("prt")
         prt = 1.0 / ncvars["prf"][:]
-        dic["data"] = np.array(([prt], dtype="float32")
+        dic["data"] = np.array([prt], dtype="float32")
         instrument_parameters["prt"] = dic
 
     if "pulse_period" in ncvars:
