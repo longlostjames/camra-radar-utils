@@ -305,7 +305,7 @@ def read_camra_raw(filename, **kwargs):
 
     fields = {}
 
-    if "ZED_H" ncvars:
+    if "ZED_H" in ncvars:
         field_name = fields_keymap['ZED_H']
         field_dic = filemetadata(field_name)
         field_dic['_FillValue'] = get_fillvalue();
