@@ -109,9 +109,11 @@ def read_camra_raw(filename, **kwargs):
     latitude = filemetadata('latitude')
     longitude = filemetadata('longitude')
     altitude = filemetadata('altitude')
-    latitude["data"]  = np.array([DS.latitude], "float64")
-    longitude["data"] = np.array([DS.longitude], "float64")
-    altitude["data"]  = np.array([DS.height], "float64")
+
+    latitude["data"] = np.array([ncvars["latitude"][0]], "float64");
+    longitude["data"] = np.array([ncvars["longitude"][0]], "float64");
+    altitude["data"]  = np.array([ncvars["height"][0]], "float64")
+    
 
 
     metadata_keymap = {
@@ -239,11 +241,8 @@ def read_camra_raw(filename, **kwargs):
     sweep_mode["data"] = np.array(1 * [None]);
 
     for key, value in sweep_modes.items():
-        print(key)
         if key in scan_type.lower(): 
             scan_type = value;
-            sweep_mode["data"] = np.array(1 * [value]);
-            sweep_mode["data"][0] = value;
             break;
 
 
@@ -267,8 +266,8 @@ def read_camra_raw(filename, **kwargs):
     time['units'] = make_time_unit_str(base_time)  
     time['data']  = nc4.date2num(dtime,time['units']);
 
-    metadata['time_coverage_start'] = datetime.datetime.strftime(dtime[0],'%Y-%m-%dT%H:%M:%SZ');
-    metadata['time_coverage_end'] = datetime.datetime.strftime(dtime[-1],'%Y-%m-%dT%H:%M:%SZ');
+    metadata['time_coverage_start'] = datetime.strftime(dtime[0],'%Y-%m-%dT%H:%M:%SZ');
+    metadata['time_coverage_end'] = datetime.strftime(dtime[-1],'%Y-%m-%dT%H:%M:%SZ');
 
     # range
     # -----
@@ -298,10 +297,21 @@ def read_camra_raw(filename, **kwargs):
 
     azimuth_span = max(azimuth['data'])-min(azimuth['data']);
 
-    if sweep_mode["data"][0] == 'ppi' and azimuth_span > 350.0:
-        sweep_mode["data"][0] = 'azimuth_surveillance';
+    if scan_type == 'ppi':
+        print(azimuth_span);
+
+        if azimuth_span > 350.0:
+            sweep_mode["data"] = np.array(1 * ["azimuth_surveillance"]);
+            sweep_mode["data"][0] = "azimuth_surveillance";
+        else:
+            print("It is a sector scan")
+            sweep_mode["data"] = np.array(1 * ["sector"]);
+            sweep_mode["data"][0] = "sector";
     else:
-        sweep_mode["data"][0] = 'sector';
+        sweep_mode["data"] = np.array(1 * [scan_type]);
+        sweep_mode["data"][0] = scan_type;
+    
+    print(sweep_mode['data'][:])
 
     fields = {}
 
@@ -640,7 +650,7 @@ def convert_camra_raw2l0b(infile,outpath,yaml_project_file,yaml_instrument_file,
 
     scan_type = RadarDataset.scan_type
 
-    file_timestamp = datetime.datetime.strptime(RadarDataset.metadata["time_coverage_start"],'%Y-%m-%dT%H:%M:%SZ');
+    file_timestamp = datetime.strptime(RadarDataset.metadata["time_coverage_start"],'%Y-%m-%dT%H:%M:%SZ');
 
     dtstr = file_timestamp.strftime('%Y%m%d-%H%M%S')
 
@@ -773,7 +783,7 @@ def convert_camra_raw2l0b(infile,outpath,yaml_project_file,yaml_instrument_file,
     # -----------------------
     user = getpass.getuser()
 
-    updttime = datetime.datetime.utcnow()
+    updttime = datetime.utcnow()
     updttimestr = updttime.ctime()
 
     history = updttimestr + (" - user:" + user
@@ -783,7 +793,7 @@ def convert_camra_raw2l0b(infile,outpath,yaml_project_file,yaml_instrument_file,
 
     DS.history = history + "\n" + DS.history;
 
-    DS.last_revised_date = datetime.datetime.strftime(updttime,'%Y-%m-%dT%H:%M:%SZ')
+    DS.last_revised_date = datetime.strftime(updttime,'%Y-%m-%dT%H:%M:%SZ')
 
     DS.close();
 
