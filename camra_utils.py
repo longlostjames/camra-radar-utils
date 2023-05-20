@@ -1888,6 +1888,40 @@ def make_quicklooks(ncfile,figpath):
 
     plt.close()
 
+
+def process_camra(datestr,inpath,outpath,yaml_project_file,yaml_instrument_file,tracking_tag):
+
+    pattern = '*{}raw.nc'.format(datestr);
+
+    print(datestr);
+    print(inpath);
+    datepath = os.path.join(inpath,datestr);
+
+    rawfiles = [];
+    rawdirs = [];
+
+    for root,dirs,files in os.walk(datepath):
+        rawfiles += [os.path.join(root,f) for f in fnmatch.filter(files, pattern)];
+        rawdirs += dirs;
+
+    data_version = "1.0";
+
+    #dBZ_offset = 9.0;
+    #range_offset = -865.56+864.0;
+
+    l0bpath = os.path.join(outpath,'L0b',datestr);
+
+    os.makedirs(l0bpath,exist_ok=True);
+
+    for dir in rawdirs:
+        print("I am Here!");
+        os.makedirs(os.path.join(l0bpath,dir),exist_ok=True);
+
+    for f in rawfiles:
+        convert_camra_mmclx2l0b(f,l0bpath,yaml_project_file,yaml_instrument_file,tracking_tag);
+
+    return
+
 if __name__ == "__main__":
     import sys, PythonCall
     PythonCall.PythonCall(sys.argv).execute()
