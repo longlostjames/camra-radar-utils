@@ -43,5 +43,5 @@ outpath = '/Users/cw66/Data/ncas-radar-camra-1/'
 
 print(tracking_tag);
 
-camra.process_camra(datestr,inpath,outpath,yaml_project_file,yaml_instrument_file,tracking_tag);
+camra.convert_camra_raw2l0b(datestr,inpath,outpath,yaml_project_file,yaml_instrument_file,tracking_tag);
 
