@@ -21,7 +21,7 @@ tracking_tag = 'AMOF_20220922221548';
 campaign = 'woest';
 
 yaml_project_file = '/Users/cw66/campaigns/woest/woest_project.yml'
-yaml_instrument_file = '/Users/cw66/campaigns/woest/woest_radars.yml'
+yaml_instrument_file = '/Users/cw66/campaigns/woest/woest_instruments.yml'
 
 
 for o, a in opts:
