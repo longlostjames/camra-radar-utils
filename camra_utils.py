@@ -1891,11 +1891,13 @@ def make_quicklooks(ncfile,figpath):
 
 def process_camra(datestr,inpath,outpath,yaml_project_file,yaml_instrument_file,tracking_tag):
 
-    pattern = '*{}raw.nc'.format(datestr);
+    pattern = '*{}*raw.nc'.format(datestr);
 
     print(datestr);
     print(inpath);
     datepath = os.path.join(inpath,datestr);
+
+    print(datepath);
 
     rawfiles = [];
     rawdirs = [];
@@ -1903,6 +1905,8 @@ def process_camra(datestr,inpath,outpath,yaml_project_file,yaml_instrument_file,
     for root,dirs,files in os.walk(datepath):
         rawfiles += [os.path.join(root,f) for f in fnmatch.filter(files, pattern)];
         rawdirs += dirs;
+    
+    print(rawdirs);
 
     data_version = "1.0";
 
@@ -1918,7 +1922,7 @@ def process_camra(datestr,inpath,outpath,yaml_project_file,yaml_instrument_file,
         os.makedirs(os.path.join(l0bpath,dir),exist_ok=True);
 
     for f in rawfiles:
-        convert_camra_mmclx2l0b(f,l0bpath,yaml_project_file,yaml_instrument_file,tracking_tag);
+        convert_camra_raw2l0b(f,l0bpath,yaml_project_file,yaml_instrument_file,tracking_tag);
 
     return
 
