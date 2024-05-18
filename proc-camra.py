@@ -17,7 +17,8 @@ except getopt.GetoptError as err:
 data_date = datetime.now()
 datestr = data_date.strftime('%Y%m%d')
 inpath = '/gws/pw/j07/ncas_obs_vol2/cao/raw_data/ncas-radar-camra-1/data/'
-outpath = '/gws/pw/j07/ncas_obs_vol2/cao/processing/ncas-radar-camra-1/'
+#outpath = '/gws/pw/j07/ncas_obs_vol2/cao/processing/ncas-radar-camra-1/'
+outpath = '/gws/nopw/j04/ncas_radar_vol1/cjw/projects/woest/camra/'
 
 
 for o, a in opts:
