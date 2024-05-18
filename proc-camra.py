@@ -63,7 +63,8 @@ for f in files:
 
     Radar = camra.read_camra_raw(f);
 
-    file_timestamp = Radar.metadata["time_coverage_start"];
+    start_datetime = datetime.strptime(Radar.metadata["time_coverage_start"],"%Y-%m-%dT%H:%M:%SZ")
+    file_timestamp = datetime.strftime(start_datetime,"%Y%m%d-%H%M%S");
 
 
     outfile = os.path.join(outpath,'ncas-radar-camra-1_{}_{}.nc'.format(file_timestamp,scan_type));
