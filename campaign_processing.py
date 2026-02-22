@@ -16,11 +16,13 @@ This module provides processing functions for different CAMRa campaigns:
   - Standard RHI processing at specific azimuths
   - VPT (Vertically Pointing) processing
   - VPT time series processing
+- DYMECS (DYnamics, Microphysics and Entrainment in Convective Systems)
+  - RHI and PPI processing
 
 Author: Chris Walden, UK Research & Innovation and
         National Centre for Atmospheric Science
-Last modified: 13-08-2025
-Version: 1.1.0
+Last modified: 22-02-2026
+Version: 1.3.0
 """
 
 from typing import List, Dict, Tuple, Optional, Any
@@ -737,6 +739,77 @@ def process_camra_ccrest_vpt_day_ts(
     except Exception as e:
         print(f"VPT L1 to moments conversion error: {e}")
 
+
+# ==============================================================================
+# DYMECS PROCESSING FUNCTIONS
+# ==============================================================================
+
+def process_camra_dymecs_day_step1(
+    datestr: str,
+    inpath: str,
+    outpath: str,
+    yaml_project_file: str,
+    yaml_instrument_file: str,
+    data_version: str = "1.0.0",
+    tracking_tag: str = "CRF_85",
+    campaign: str = "dymecs",
+    single_sweep: bool = True
+) -> None:
+    """
+    Process CAMRa DYMECS campaign data for a single day - Step 1.
+    
+    DYMECS (DYnamics, Microphysics and Entrainment in Convective Systems)
+    processing handles RHI and PPI scans.
+    
+    Args:
+        datestr: Date string in YYYYMMDD format
+        inpath: Input directory containing CAMRa files
+        outpath: Output directory for processed files
+        yaml_project_file: Path to project YAML file
+        yaml_instrument_file: Path to instrument YAML file
+        data_version: Data version string (default: "1.0.0")
+        tracking_tag: AMOF tracking tag (default: "CRF_85")
+        campaign: Campaign name (default: "dymecs")
+        single_sweep: If True, process each file separately (default: True)
+    """
+    print(f"Processing CAMRa DYMECS day: {datestr}")
+    
+    # Create output directory
+    outdir = os.path.join(outpath, datestr)
+    if not os.path.exists(outdir):
+        os.makedirs(outdir)
+    
+    # Find CAMRa files for this date
+    files_by_scan = find_camra_files(inpath, datestr)
+    
+    if not files_by_scan:
+        print(f"No CAMRa files found for DYMECS {datestr}")
+        return
+    
+    # Process RHI and PPI scan types
+    scan_types = ['rhi', 'ppi']
+    
+    for scan_type in scan_types:
+        if scan_type in files_by_scan:
+            try:
+                process_camra_scan_type(
+                    files_by_scan[scan_type],
+                    scan_type,
+                    outdir,
+                    yaml_project_file,
+                    yaml_instrument_file,
+                    data_version,
+                    tracking_tag,
+                    campaign,
+                    single_sweep
+                )
+            except Exception as e:
+                print(f"Error processing CAMRa DYMECS {scan_type.upper()}: {e}")
+
+
+# ==============================================================================
+# HELPER FUNCTIONS
+# ==============================================================================
 
 def process_camra_scan_type(
     files: List[str],
