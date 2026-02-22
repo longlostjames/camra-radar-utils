@@ -9,10 +9,10 @@ Campaign-specific processing functions for CAMRa radar data
 This module provides processing functions for different CAMRa campaigns:
 - WOEST (WESCON Observing the Evolving Structures of Turbulence) 
   - IOP (Intensive Observation Period)
-  - SOP (Special Observation Period) 
-  - Other (Regular operations)
+  - SOP (Standard Observation Period) 
+  - Other (Other operations)
 - KASBEX (Ka- and S-Band EXperiment)
-- CCREST-M (Cloud, Convection and Rain ExperimentS in the Tropics - Maritime)
+- CCREST-M (Characterising CiRrus and icE cloud acrosS the specTrum - Microwave)
   - Standard RHI processing at specific azimuths
   - VPT (Vertically Pointing) processing
   - VPT time series processing
@@ -164,7 +164,7 @@ def process_camra_woest_sop_step1(
     single_sweep: bool = False
 ) -> None:
     """
-    Process CAMRa WOEST SOP (Special Observation Period) data.
+    Process CAMRa WOEST SOP (Standard Observation Period) data.
     
     SOP processing handles special observation files, typically with
     more intensive scanning strategies.

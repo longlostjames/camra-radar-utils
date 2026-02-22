@@ -1,0 +1,212 @@
+---
+
+- AMOF_20220922221548:
+
+    project_name: WesCon - Observing the Evolving Structures of Turbulence (WOEST)
+
+    amof_admin: 
+      tracking_tag: AMOF_20220922221548
+      project_type: NERC Grant
+      facility_charge: £30,000
+
+    grant:
+      ref: NE/X018539/1
+      start_date: 10/02/2023
+      end_date: 09/02/2027
+      value: £1,506,127
+      grade:
+      scheme: Directed (RP) - NR1
+      programme: Turbulent Processes
+
+      abstract: |-
+        Mid-latitude summertime convection can lead to hazardous weather (flash flooding from extreme rainfall, large hail and damaging winds). 
+        However, accurate forecasting of convection is challenging due to the interaction of many processes, especially rain formation and turbulence, 
+        which interact over a wide range of scales. Recent studies have shown that model simulation results depend sensitively on the parametrisation schemes 
+        used to represent turbulent flow on sub-grid scales. For instance, a model configuration that parameterises the largest turbulent eddies may develop 
+        broader and longer-lived convective storms than a model configuration that treats these eddies explicitly. This discrepancy leads to biases in storm 
+        number, intensity and lifetime, hence to errors in severe weather warnings and the forecasts of the large-scale circulation. There is a critical lack 
+        of observations that capture the short time and length scales of turbulent processes in the atmosphere to help inform the improvement and development 
+        of turbulence parametrisation schemes. The Wessex Summertime Convection Experiment (WesCon) is designed to address this deficiency by combining FAAM 
+        aircraft measurements with a selection of ground-based remote sensing instruments and radiosondes. This research, WesCon - Observing the Evolving 
+        Structures of Turbulence (WOEST), complements WesCon by enabling frequent observations of the same turbulent structures at high resolution. In terms 
+        of moist convective turbulence, WOEST will radically advance observations of cloud dynamics by tracking precipitating cores of convective clouds and 
+        the turbulent regions embedded within them in real-time using four dual-polarisation Doppler radars. The radar scans will also be coordinated with the 
+        FAAM aircraft location to enable coincident observations. In terms of boundary-layer turbulence and variability, their evolution will be captured uniquely 
+        by multiple UAS, which will be coordinated to capture hourly profiles of temperature, humidity, and winds to study the small-scale variability in the 
+        lowest 2km of the atmosphere. Additionally, an array of cloud cameras will be used to reconstruct the 3D motion and evolution of boundary-layer clouds, to 
+        be related to the turbulent and dynamic evolution of the boundary layer as measured by remote sensing instruments such as lidar (to measure cloud bases and 
+        humidity profiles) and wind profilers. The observations gathered in WOEST will capture turbulent processes in the atmosphere at a range of fine spatial and 
+        temporal scales. Our multi-instrument approach will enable us to evaluate simulations of turbulence and dynamics in convective clouds and how the structure 
+        and evolution of the boundary layer influence moist convective turbulence at a range of scales, including at the process-level relating turbulence to the 
+        strength and size of updrafts. This will lead to a new understanding of the variability and evolution of the boundary layer in the context of the surrounding 
+        cloud field and the variability of turbulence and cloud dynamics. Such insights should lead to significant improvements within the sub-grid turbulence 
+        parametrisations that allow both km-scale global weather and climate simulations and sub-km-scale regional weather forecasts to more accurately predict the 
+        evolution and intensity of hazardous convective storms.
+
+      scientific_area:
+        - Atmospheric: 90%
+        - Earth: 0%
+        - Freshwater: 0%
+        - Marine: 0%
+        - Terrestrial: 10%
+      ENRI:
+        - Biodiversity: 0%
+        - Environmental Risks and Hazards: 75%
+        - Global Change: 25%
+        - Natural Resource Management: 0%
+        - Pollution and Waste: 0%
+      research_area:
+        - Atmospheric physics and chemistry:
+          - Boundary layer meteorology: 50%
+          - Tropospheric processes: 50%
+      keywords:
+
+    principal_investigator:
+      name: Ryan R Neely
+      institution: University of Leeds
+      email: ryan.neely@leeds.ac.uk
+      pid: https://orcid.org/0000-0003-4560-4812
+
+    co-investigators:
+      - Thorwald H M Stein:
+          institution: University of Reading
+          pid: https://orcid.org/0000-0002-9215-5397
+      - David M Schultz:
+          institution: The University of Manchester
+          pid: https://orcid.org/0000-0003-1558-6975
+      - Ronald Clark:
+          institution: University of Oxford
+          pid:
+      - Edward Gryspeerdt:
+          institution: Imperial College London
+          pid: https://orcid.org/0000-0002-3815-4756
+      - Christopher J Walden:
+          institution: STFC - Laboratories
+          pid: https://orcid.org/0000-0002-5718-466X
+      - Luis Garcia-Carreras:
+          institution: The University of Manchester
+          pid: https://orcid.org/0000-0002-9844-3170
+      - Hugo Ricketts:
+          institution: The University of Manchester
+          pid: https://orcid.org/0000-0002-1708-2431
+
+    project_partners:
+      - Paul Barrett:
+          institution: Met Office 
+          pid: https://orcid.org/0000-0002-3763-0909
+
+
+    ncas_instruments:
+      - ncas-mobile-ka-band-radar-1:
+          title: Moment data from NCAS Mobile Ka-band Cloud Radar (Kepler) at MOD Lyneham, UK
+          source: NCAS Ka-Band Mobile Cloud Radar unit 1
+          altitude:
+            value: 150.5
+            units: metres
+          altitude_agl: 
+            value: 5.5
+            units: metres
+          latitude: 
+            value: 51.50888 
+            units: degrees_north
+          longitude: 
+            value: -1.99907
+            units: degrees_east
+          platform:
+            location: lyneham
+            altitude: 145 m (orthometric height above EGM2008 geoid)
+            type: stationary_platform
+            deployment_mode: land
+            location_keywords: Lyneham, Wiltshire, England
+          instrument_software: 
+            name: rx_client
+            version: /home/vin/WORK/MBR3_XCRL_B3XC/ews/rx_client/Debug/rx_client 20161014-1951
+          data_creator: 
+            name: Chris Walden
+            email: chris.walden@ncas.ac.uk
+            pid: https://orcid.org/0000-0002-5718-466X
+            institution: National Centre for Atmospheric Science (NCAS)
+          processing_software:
+            url:  https://github.com/longlostjames/kepler-radar-utils/releases/tag/v1.0.1
+            version: v1.0.1
+          data_licence: This dataset is released for use under the Open Government Licence, OGL-UK-3.0 (see https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
+          acknowledgement: |-
+            This dataset was developed as part of the activity "WesCon - Observing the Evolving Structures of Turbulence (WOEST)", funded by 
+            Natural Environment Research Council (NERC) Grant NE/X018539/1.
+            It uses instrumentation provided by the Atmospheric Measurement and Observation Facility (AMOF), part of NERC National Capability.
+            Users should acknowledge the National Centre for Atmospheric Science (NCAS) as the data provider.
+          usage:
+            - bespoke scanning
+      - ncas-radar-camra-1:
+          title: Moment data from CAMRa Radar
+          source: NCAS S-Band CAMRa Weather Radar unit 1
+          platform:
+            location: CAO
+            type: stationary_platform
+            deployment_mode: land
+            location_keywords: Chilbolton, Hampshire, England
+          instrument_software:
+            name: https://gate.chobs.rl.ac.uk/svn/radar-camra/trunk (radar-camra-rec)
+            version: Revision 57
+          data_creator: 
+            name: Chris Walden
+            email: chris.walden@ncas.ac.uk
+            pid: https://orcid.org/0000-0002-5718-466X
+            institution: National Centre for Atmospheric Science (NCAS) and Science and Technology Facilities Council (STFC) as part of UK Research and Innovation (UKRI)
+          data_licence: This dataset is released for use under the Open Government Licence, OGL-UK-3.0 (see https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
+          acknowledgement: |-
+            This dataset was developed as part of the activity "WesCon - Observing the Evolving Structures of Turbulence (WOEST)", funded by 
+            Natural Environment Research Council (NERC) Grant NE/X018539/1.
+            It uses instrumentation provided by the Atmospheric Measurement and Observation Facility (AMOF), part of NERC National Capability.
+            Users should acknowledge UK Research and Innovation as the data provider (in partnership with the National Centre for Atmospheric Science).
+          usage: 
+            - bespoke scanning
+      - ncas-mobile-x-band-radar-1:
+          title: Moment data from NCAS NXPOL-1 radar
+          source: NCAS Mobile X-band Radar unit 1
+          platform:
+            location: MOD-Lyneham
+            type: stationary_platform
+            deployment_mode: land
+          usage: 
+            - bespoke scanning
+
+
+      - ncas-lidar-dop-3:
+          title:
+          source: NCAS Doppler Aerosol Lidar unit 3
+          platform:
+            location:
+            type:
+          usage:
+            - standard operation
+          data_creator:
+            name: Chris Walden
+            email: chris.walden@ncas.ac.uk
+            pid: https://orcid.org/0000-0002-5718-466X
+            institution: National Centre for Atmospheric Science (NCAS) and Science and Technology Facilities Council (STFC) as part of UK Research and Innovation (UKRI)
+          data_licence: This dataset is released for use under the Open Government Licence, OGL-UK-3.0 (see https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
+          acknowledgement: |-
+            This dataset was developed as part of the activity "WesCon - Observing the Evolving Structures of Turbulence (WOEST)", funded by 
+            Natural Environment Research Council (NERC) Grant NE/X018539/1.  
+            It uses instrumentation provided by the Atmospheric Measurement and Observation Facility (AMOF), part of NERC National Capability.
+            Users should acknowledge UK Research and Innovation as the data provider (in partnership with the National Centre for Atmospheric Science).
+          pulse_repetition_frequency: 15000 s-1
+          focus: inf
+          velocity_resolution: 0.0382 m s-1
+          calibration_sensitivity: Calibrated to manufacturers standard 0 to 19 m s-1
+          calibration_certification_date: Not available
+          calibration_certification_url: Not available
+          sampling_interval: 5 second
+          averaging_interval: 5 second
+          pulses_per_ray: 30000
+          rays_per_point: 1
+          number_of_gates: 320
+          gate_length: 30 m
+          fft_length: 1024
+          maximum_range: 9600 m
+          amf_vocabularies_release: https://github.com/ncasuk/AMF_CVs/releases/tag/0.5.0
+          comment: = |-
+            Instrument is on the flat roof of a building, 3m above ground level.
+            Data in this file are recorded from co-polar observations.
+            The time variable gives the time at the end of the acquisition interval.

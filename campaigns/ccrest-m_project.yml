@@ -1,0 +1,94 @@
+---
+
+- AMOF_20230201132601:
+
+    project_name: Characterising CiRrus and icE cloud acrosS the specTrum - Microwave (CCREST-M)
+
+    amof_admin: 
+      tracking_tag: AMOF_20230201132601
+      project_type: Not-for-profit public sector
+      facility_charge: 
+
+      abstract: |-
+        The aim of CCREST-M is to improve the representation of cirrus and ice
+        cloud within weather and climate models using the FAAM BAe-146 aircraft
+        as the central platform. CCREST-M aims to capture simultaneous passive
+        (FAAM aircraft) and active (Chilbolton radars) remote sensing 
+        measurements across the microwave and sub-millimetre spectrum to better
+        constrain ice scattering models, and to improve upon them to improve 
+        weather and climate model predictions.   
+        
+      scientific_area:
+        - Atmospheric: 100%
+        - Earth: 0%
+        - Freshwater: 0%
+        - Marine: 0%
+        - Terrestrial: 0%
+      keywords:
+
+    principal_investigator:
+      name: Anthony J Baran
+      institution: Met Office
+      email: anthony.baran@metoffice.gov.uk
+      pid: "https://www.metoffice.gov.uk/research/people/anthony-j-baran"
+
+    co-investigators:
+
+    project_partners:
+
+    ncas_instruments:
+      - ncas-radar-mobile-ka-band-1:
+          title: Moment data from NCAS Mobile Ka-band Radar (Kepler)
+          source: NCAS Mobile Ka-band Radar unit 1
+          platform:
+            location: CAO
+            type: stationary_platform
+            deployment_mode: land
+            location_keywords: Chilbolton, Hampshire, England
+          instrument_software: 
+            name: rx_client
+            version: /home/vin/WORK/MBR3_XCRL_B3XC/ews/rx_client/Debug/rx_client 20161014-1951
+          data_creator: 
+            name: Chris Walden
+            email: chris.walden@ncas.ac.uk
+            pid: https://orcid.org/0000-0002-5718-466X
+            institution: National Centre for Atmospheric Science (NCAS) and Science and Technology Facilities Council (STFC) as part of UK Research and Innovation (UKRI)
+          data_licence: This dataset is released for use under the Open Government Licence, OGL-UK-3.0 (see https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
+          acknowledgement: |-
+            This dataset was developed as part of the activity "CCREST-M", 
+            funded by the Met Office.  It uses instrumentation provided by the 
+            Atmospheric Measurement and Observation Facility (AMOF), part of 
+            NERC National Capability.
+            Users should acknowledge the National Centre for Atmospheric 
+            Science (NCAS) as the data provider.
+          usage:
+            - bespoke scanning
+      - ncas-radar-camra-1:
+          title: Moment data from NCAS CAMRa Radar
+          source: NCAS S-Band CAMRa Weather Radar unit 1
+          platform:
+            altitude: 84 m (orthometric height above EGM2008 geoid)
+            location: CAO
+            type: stationary_platform
+            deployment_mode: land
+            location_keywords: Chilbolton, Hampshire, England
+          instrument_software:
+            name: https://gate.chobs.rl.ac.uk/svn/radar-camra/trunk (radar-camra-rec)
+            version: Revision 57
+          data_creator: 
+            name: Chris Walden
+            email: chris.walden@ncas.ac.uk
+            pid: https://orcid.org/0000-0002-5718-466X
+            institution: National Centre for Atmospheric Science (NCAS) and Science and Technology Facilities Council (STFC) as part of UK Research and Innovation (UKRI)
+          data_licence: This dataset is released for use under the Open Government Licence, OGL-UK-3.0 (see https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
+          acknowledgement: |-
+            This dataset was developed as part of the activity "CCREST-M", 
+            funded by the Met Office.  It uses instrumentation provided by the 
+            Atmospheric Measurement and Observation Facility (AMOF), part of 
+            NERC National Capability.
+            Users should acknowledge the National Centre for Atmospheric 
+            Science (NCAS) as the data provider.
+          usage: 
+            - bespoke scanning
+
+

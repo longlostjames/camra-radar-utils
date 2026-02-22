@@ -48,8 +48,9 @@ campaign = 'woest';
 
 data_version = "1.0.0"
 
-
-yaml_project_file = os.path.join(homepath,'amof_campaigns',f'{campaign}_project.yml')
+# Get the directory where this script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+yaml_project_file = os.path.join(script_dir, 'campaigns', f'{campaign}_project.yml')
 yaml_instrument_file = os.path.join(homepath,'amof_instruments','amof_instruments.yml')
 
 print(yaml_project_file);

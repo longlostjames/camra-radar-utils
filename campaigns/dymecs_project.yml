@@ -1,0 +1,108 @@
+---
+
+- CRF_85:
+
+    project_name: Dynamical and microphysical evolution of convective storms (DYMECS)
+
+    amof_admin: 
+      tracking_tag: CRF_85
+      project_type: NERC Grant
+      facility_charge: £108,000
+
+    grant:
+      ref: NE/I009965/1
+      start_date: 20/04/2011
+      end_date: 31/08/2014
+      value: £360,019
+      grade:
+      scheme: Standard Grant (FEC)
+      programme: Standard Grant
+
+      abstract: |-
+        A series of wet summers in the UK have reminded us of the devastating floods that can be caused by thunderstorms, from the iconic images
+        of the Boscastle flood in August 2004 through to the repeated flooding events in 2007 that led to towns in Gloucestershire without mains
+        water for up to 17 days and according to the subsequent Pitt Review, caused in excess of 3 billion pounds worth of damage. There is
+        clearly an urgent need to improve our ability to forecast these storms from a few hours to a few days ahead. Most computer models used
+        for weather forecasting worldwide divide the atmosphere up into boxes several tens of kilometers across. Since convective shower clouds
+        and thunderstorms are typically only between 2 and 10 km across, these models have no chance to simulate individual clouds; rather they
+        must try to estimate the effect of an ensemble of clouds within each box on surface rainfall. This is known as a 'convection
+        parameterization' and is very error prone. However, there has been a continued increase in computer power in recent years, and the Met
+        Office currently runs one of the highest resolution national weather forecast model operationally, its model having a horizontal grid-box
+        size of 1.5 km over the whole of the UK. At this resolution it is just about able to simulate the air flows in individual clouds, and a
+        convection parameterization is not needed. While there is evidence that this has improved the accuracy of forecasts, it is clear that
+        there are still very significant shortcomings in the nature of convective shower clouds and thunderstorms simulated at this resolution.
+        What we need are very detailed observations of a large number of shower clouds and thunderstorms over the UK, and how each cloud grows and
+        decays, with which to test and improve these high resolution models. In this project we will obtain this information using the Chilbolton
+        weather radar in Hampshire, which is able to measure all kinds of useful properties of storms at very high resolution (3D structure, surface
+        rain rate, the occurrence of hail, the amount of ice in the upper parts of the cloud, the airflows within the storm and the levels of
+        turbulence). A particularly innovative aspect to the project is that we will develop software to control the radar automatically, so that it
+        can track individual thunderstorms as they evolve. Detailed information on potentially hundreds of storms will be obtained by operating the
+        radar on 40 suitable days over an 18-month period, including the summers of 2011 and 2012. This unique dataset will be used to evaluate the
+        evolution of storms in the forecast model in a level of detail and a range of conditions that has never been achieved before. We will rerun
+        the model with different model configurations (e.g. different ways to describe the ways that cloud ice particles and liquid droplets grow
+        and interact to eventually form rain), in order to determine what it is that limits the realism of shower clouds and thunderstorms in this
+        model, and hence how to improve forecasts. These findings will be applicable to other models worldwide. We will examine the detailed way that
+        storms evolve in the model and in reality, particularly how the airflows in one storm conspire to initiate another storm, and what it is that
+        causes storms to rain persistently in one place, since it is often this behaviour that is responsible for flooding. A further aim of this
+        project will be to test a number of the assumptions that are made in convection parameterizations. Although convection parameterization is not
+        as accurate as simulating individual clouds explicitly, for making 100-year climate forecasts we do not have the computer power to do this
+        with the 1.5-km boxes that would be required over the entire world. Our detailed dataset will help us to ensure that the assumptions about the
+        size and properties of clouds in these parameterizations are realistic, potentially improving the accuracy of climate forecasts.
+
+      scientific_area:
+        - Atmospheric: 80%
+        - Earth: 0%
+        - Freshwater: 0%
+        - Marine: 0%
+        - Terrestrial: 20%
+      ENRI:
+        - Biodiversity: 0%
+        - Environmental Risks and Hazards: 75%
+        - Global Change: 25%
+        - Natural Resource Management: 0%
+        - Pollution and Waste: 0%
+      research_area:
+        - Atmospheric physics and chemistry:
+          - Boundary layer meteorology: 50%
+          - Tropospheric processes: 50%
+      keywords:
+
+    principal_investigator:
+      name: Robin J Hogan
+      institution: University of Reading
+      email: r.j.hogan@reading.ac.uk
+      pid: https://orcid.org/0000-0002-3180-5157
+
+    co-investigators:
+      - Robert S Plant:
+          institution: University of Reading
+          pid: https://orcid.org/0000-0002-9215-5397
+      - Daniel Kirshbaum:
+          institution: McGill University
+          pid: https://orcid.org/0000-0001-8748-3700
+
+    ncas_instruments:
+      - ncas-radar-camra-1:
+          title: Moment data from CAMRa Radar
+          source: NCAS S-Band CAMRa Weather Radar unit 1
+          platform:
+            location: CAO
+            type: stationary_platform
+            deployment_mode: land
+            location_keywords: Chilbolton, Hampshire, England
+          instrument_software:
+            name: https://gate.chobs.rl.ac.uk/svn/radar-camra/trunk (radar-camra-rec)
+            version: Not known
+          data_creator: 
+            name: Chris Walden
+            email: chris.walden@ncas.ac.uk
+            pid: https://orcid.org/0000-0002-5718-466X
+            institution: National Centre for Atmospheric Science (NCAS) and Science and Technology Facilities Council (STFC) as part of UK Research and Innovation (UKRI)
+          data_licence: This dataset is released for use under the Open Government Licence, OGL-UK-3.0 (see https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
+          acknowledgement: |-
+            This dataset was collected as part of the activity "Dynamical and microphysical evolution of convective storms (DYMECS)", funded by 
+            Natural Environment Research Council (NERC) Grant NE/I009965/1. This version has been reprocessed by the National Centre for Atmospheric Science (NCAS).
+            It uses instrumentation provided by the Chilbolton Facility for Atmospheric and Radio Research (CFARR), which was funded as part of NERC National Capability.
+            Users should acknowledge UK Research and Innovation as the data provider (in partnership with the NCAS).
+          usage: 
+            - bespoke scanning

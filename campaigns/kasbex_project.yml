@@ -1,0 +1,114 @@
+---
+
+- AMOF_20250508133639:
+
+    project_name: Ka- and S-band Experiment (KASBEX)
+
+    amof_admin: 
+      tracking_tag: AMOF_20250508133639
+      project_type: Direct Access
+      facility_charge: N/A
+
+    grant:
+      ref: N/A
+      start_date: 28/07/2025
+      end_date: 30/09/2025
+      value: 
+      grade: 
+      scheme: N/A
+      programme: 
+
+      abstract: |-
+        INCUS [INvestigation of Convective UpdraftS; Haddad and Sy, 2024] is a satellite mission due to be launched in May 2026 in which three
+        satellites will be flown in a tight convoy, separated by 30s and 90s, with the first and third separated by 120s. Each satellite has a
+        downwards-facing Ka-band meteorological radar, and the centre satellite has a radiometer with a large swath for a wider view of the cloud
+        field. The fundamental idea is that, by comparing radar scans of the same location separated by short time intervals, it is possible to
+        estimate convective cloud growth and mass flux– the delta-Z method. This method has been tested in a previous study [Dolan et al., 2023].
+        However, they used C-band radars, and were limited to individual case studies. We plan to extend this analysis using Kepler– a Ka-band
+        radar (to match INCUS) in combination with CAMRa– an S-band radar, and the proposed radar time here would allow us to characterize the
+        differences between the two, as has been done previously for different frequencies than ours [e.g., Huang et al., 2019, Hunzinger et al., 2020].
+        This would be of interest in its own right, but would also allow us to unlock the full potential WesCon-WOEST dataset [Barr et al., 2025], which
+        has thousands of scans from both radars, allowing us to perform a comprehensive statistical analysis of the delta-Z method.
+       
+      scientific_area:
+        - Atmospheric: 100%
+        - Earth: 0%
+        - Freshwater: 0%
+        - Marine: 0%
+        - Terrestrial: 0%
+      ENRI:
+        - Biodiversity: 0%
+        - Environmental Risks and Hazards: 75%
+        - Global Change: 25%
+        - Natural Resource Management: 0%
+        - Pollution and Waste: 0%
+      research_area:
+        - Atmospheric physics and chemistry:
+          - Tropospheric processes: 100%
+      keywords:
+
+    principal_investigator:
+      name: Mark Muetzelfeldt
+      institution: University of Reading
+      email: mark.muetzelfeldt@reading.ac.uk
+      pid: https://orcid.org/0000-0002-6851-7351
+
+
+    project_partners:
+
+    ncas_instruments:
+      - ncas-mobile-ka-band-radar-1:
+          title: Moment data from NCAS Mobile Ka-band Radar (Kepler)
+          source: NCAS Mobile Ka-band Radar unit 1
+          platform:
+            location: CAO
+            type: stationary_platform
+            deployment_mode: land
+            location_keywords: Chilbolton, Hampshire, England
+          instrument_software: 
+            name: rx_client
+            version: /home/vin/WORK/MBR3_XCRL_B3XC/ews/rx_client/Debug/rx_client 20161014-1951
+          data_creator: 
+            name: Chris Walden
+            email: chris.walden@ncas.ac.uk
+            pid: https://orcid.org/0000-0002-5718-466X
+            institution: National Centre for Atmospheric Science (NCAS) and Science and Technology Facilities Council (STFC) as part of UK Research and Innovation (UKRI)
+          processing_software:
+            url:  https://github.com/longlostjames/kepler-radar-utils/releases/tag/v1.0.2
+            version: v1.0.2
+          data_licence: This dataset is released for use under the Open Government Licence, OGL-UK-3.0 (see https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
+        
+          acknowledgement: |-
+            This dataset was developed during Ka- and S-band Experiment (KASBEX). 
+            It uses instrumentation provided by the Atmospheric Measurement and Observation Facility (AMOF), part of NERC National Capability.
+            Users should acknowledge the National Centre for Atmospheric Science (NCAS) as the data provider.
+
+      - ncas-radar-camra-1:
+          title: Moment data from the Chilbolton Advanced Meteorological Radar (CAMRa)
+          source: NCAS S-Band CAMRa Weather Radar unit 1
+          platform:
+            location: CAO
+            type: stationary_platform
+            deployment_mode: land
+            location_keywords: Chilbolton, Hampshire, England
+          data_creator: 
+            name: Chris Walden
+            email: chris.walden@ncas.ac.uk
+            pid: https://orcid.org/0000-0002-5718-466X
+            institution: National Centre for Atmospheric Science (NCAS) and Science and Technology Facilities Council (STFC) as part of UK Research and Innovation (UKRI)
+          instrument_software:
+            name: https://gate.chobs.rl.ac.uk/svn/radar-camra/trunk (radar-camra-rec)
+            version: Revision 62
+
+          processing_software:
+            url: https://github.com/longlostjames/camra-radar-utils
+            version: v1.0.0
+
+          data_licence: This dataset is released for use under the Open Government Licence, OGL-UK-3.0 (see https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
+
+          acknowledgement: |-
+            This dataset was developed during Ka- and S-band Experiment (KASBEX). 
+            It uses instrumentation provided by the Atmospheric Measurement and Observation Facility (AMOF), part of NERC National Capability.
+            Users should acknowledge the National Centre for Atmospheric Science (NCAS) as the data provider.
+          usage:
+            - bespoke scanning
