@@ -6,8 +6,8 @@ KASBEX Campaign
 Overview
 --------
 
-KASBEX is a dual-wavelength radar campaign using the CAMRa S-band radar
-alongside the NCAS Ka-band radar (Copernicus).  The campaign focuses on
+KASBEX was a dual-wavelength radar campaign using the CAMRa S-band radar
+alongside the NCAS Ka-band radar (Copernicus).  The campaign focused on
 characterising radar reflectivity differences between the two wavelengths
 to study precipitation microphysics.
 

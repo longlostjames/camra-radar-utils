@@ -6,8 +6,8 @@ CCREST-M Campaign
 Overview
 --------
 
-CCREST-M aims to improve the representation of cirrus and ice cloud within
-weather and climate models.  The campaign uses the FAAM BAe-146 aircraft as
+CCREST-M aimed to improve the representation of cirrus and ice cloud within
+weather and climate models.  The campaign used the FAAM BAe-146 aircraft as
 its central platform, capturing simultaneous passive (FAAM aircraft) and
 active (Chilbolton radars) remote-sensing measurements across the microwave
 and sub-millimetre spectrum to better constrain ice scattering models and
