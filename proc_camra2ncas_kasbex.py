@@ -42,11 +42,11 @@ except getopt.GetoptError as err:
 
 data_date = datetime.datetime.now()
 datestr = data_date.strftime('%Y%m%d')
-tracking_tag = 'AMOF_20220922221548';
+tracking_tag = 'AMOF_20250508133639';
 
-campaign = 'woest';
+campaign = 'kasbex';
 
-data_version = "1.0.1"
+data_version = "1.0.0"
 
 yaml_project_file = os.path.join(homepath,'amof_campaigns',f'{campaign}_project.yml')
 yaml_instrument_file = os.path.join(homepath,'amof_instruments','amof_instruments.yml')
@@ -67,15 +67,16 @@ for o, a in opts:
 camrapath = '/gws/pw/j07/ncas_obs_vol2/cao/raw_data/ncas-radar-camra-1';
 ncas_radar_vol1_path = '/gws/nopw/j04/ncas_radar_vol1';
 amof_proc_path = '/gws/pw/j07/ncas_obs_vol2/cao/processing/ncas-radar-camra-1'
-inpath = os.path.join(camrapath,'data','campaign','20230602_woest','raw',datestr);
+inpath = os.path.join(camrapath,'data','campaign',campaign,'raw',datestr);
 
 #outpath = os.path.join(ncas_radar_vol1_path,'cjw','projects',campaign,'camra','L1b',datestr);
-outpath = os.path.join(amof_proc_path,campaign,'L1',datestr,'other');
+outpath = os.path.join(amof_proc_path,campaign,'L1',datestr);
 
 
 if not os.path.isdir(outpath): 
     os.makedirs(outpath);
 
-campaign_processing.process_camra_woest_other_step1(datestr,inpath,outpath,yaml_project_file,yaml_instrument_file,data_version=data_version);
+
+campaign_processing.process_camra_kasbex_day_step1(datestr,inpath,outpath,yaml_project_file,yaml_instrument_file,data_version=data_version,tracking_tag=tracking_tag,campaign=campaign);
 
 

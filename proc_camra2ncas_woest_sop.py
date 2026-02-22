@@ -27,7 +27,7 @@ version = 0.1
 
 sys.path.append('/home/users/cjwalden/git/camra-radar-utils')
 
-import camra_utils
+import campaign_processing
 
 from pathlib import Path
 homepath = Path.home()
@@ -76,6 +76,6 @@ outpath = os.path.join(amof_proc_path,campaign,'L1',datestr,'sop');
 if not os.path.isdir(outpath): 
     os.makedirs(outpath);
 
-camra_utils.process_camra_woest_sop_step1(datestr,inpath,outpath,yaml_project_file,yaml_instrument_file,data_version=data_version);
+campaign_processing.process_camra_woest_sop_step1(datestr,inpath,outpath,yaml_project_file,yaml_instrument_file,data_version=data_version);
 
 
