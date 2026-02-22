@@ -20,8 +20,8 @@ tracking_tag = 'AMOF_20220922221548';
 
 campaign = 'woest';
 
-yaml_project_file = '/Users/cw66/campaigns/woest/woest_project.yml'
-yaml_instrument_file = '/Users/cw66/campaigns/woest/woest_instruments.yml'
+yaml_project_file = '/home/users/cjwalden/campaigns/woest/woest_project.yml'
+yaml_instrument_file = '/home/users/cjwalden/campaigns/woest/woest_instruments.yml'
 
 
 for o, a in opts:
@@ -36,11 +36,11 @@ for o, a in opts:
     else:
         assert False, "unhandled option"
 
-inpath = '/Users/cw66/Data/woest/radar-camra/'
-#inpath = os.path.join('/gws/pw/j07/ncas_obs_vol2/cao/raw_data/ncas-radar-camra-1/data/campaign',campaign,'mom');
-outpath = '/Users/cw66/Data/ncas-radar-camra-1/'
+inpath = '/gws/pw/j07/ncas_obs_vol2/cao/raw_data/ncas-radar-camra-1/data/campaign/z-calibration/raw'
+#inpath = os.path.join('/gws/pw/j07/ncas_obs_vol2/cao/raw_data/ncas-radar-camra-1/data/campaign',campaign,'raw');
+#outpath = '/Users/cw66/Data/ncas-radar-camra-1/'
 #outpath = os.path.join('/gws/pw/j07/ncas_obs_vol2/cao/processing/ncas-radar-camra-1',campaign);
-
+outpath = os.path.join('/gws/nopw/j04/ncas_radar_vol2/cjw/projects',campaign);
 print(tracking_tag);
 
 camra.process_camra(datestr,inpath,outpath,yaml_project_file,yaml_instrument_file,tracking_tag);
