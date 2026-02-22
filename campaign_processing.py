@@ -7,21 +7,29 @@ campaign_processing.py
 Campaign-specific processing functions for CAMRa radar data
 
 This module provides processing functions for different CAMRa campaigns:
-- WOEST (WESCON Observing the Evolving Structures of Turbulence) 
-  - IOP (Intensive Observation Period)
-  - SOP (Standard Observation Period) 
-  - Other (Other operations)
-- KASBEX (Ka- and S-Band EXperiment)
-- CCREST-M (Characterising CiRrus and icE cloud acrosS the specTrum - Microwave)
-  - Standard RHI processing at specific azimuths
-  - VPT (Vertically Pointing) processing
-  - VPT time series processing
-- DYMECS (DYnamics, Microphysics and Entrainment in Convective Systems)
-  - RHI and PPI processing
 
-Author: Chris Walden, UK Research & Innovation and
-        National Centre for Atmospheric Science
+* **WOEST** (WESCON Observing the Evolving Structures of Turbulence)
+
+  * IOP (Intensive Observation Period)
+  * SOP (Standard Observation Period)
+  * Other (Other operations)
+
+* **KASBEX** (Ka- and S-Band EXperiment)
+
+* **CCREST-M** (Characterising CiRrus and icE cloud acrosS the specTrum - Microwave)
+
+  * Standard RHI processing at specific azimuths
+  * VPT (Vertically Pointing) processing
+  * VPT time series processing
+
+* **DYMECS** (DYnamics, Microphysics and Entrainment in Convective Systems)
+
+  * RHI and PPI processing
+
+Author: Chris Walden, UK Research & Innovation / National Centre for Atmospheric Science
+
 Last modified: 22-02-2026
+
 Version: 1.3.0
 """
 
