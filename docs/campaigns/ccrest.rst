@@ -6,9 +6,14 @@ CCREST-M Campaign
 Overview
 --------
 
-CCREST-M is a tropical field campaign studying cloud, convection and rainfall
-processes.  CAMRa data were collected at the Chilbolton Observatory in 2023.
-Three complementary processing streams are used:
+CCREST-M aims to improve the representation of cirrus and ice cloud within
+weather and climate models.  The campaign uses the FAAM BAe-146 aircraft as
+its central platform, capturing simultaneous passive (FAAM aircraft) and
+active (Chilbolton radars) remote-sensing measurements across the microwave
+and sub-millimetre spectrum to better constrain ice scattering models and
+improve weather and climate model predictions.
+
+Three complementary CAMRa processing streams are used:
 
 .. list-table::
    :header-rows: 1
