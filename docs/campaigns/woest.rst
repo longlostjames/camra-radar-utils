@@ -21,7 +21,7 @@ Three observation modes were used during the campaign:
    * - **IOP** (Intensive Observation Period)
      - Targeted storm-tracking RHI scans, organised into regional
        sub-directories (``region_01``, ``region_02``, …).
-   * - **SOP** (Special Observation Period)
+   * - **SOP** (Standard Operating Period)
      - Enhanced scanning strategy, files identified by ``sop`` in filename
        or stored in a dedicated ``sop/`` sub-directory.
    * - **Other**

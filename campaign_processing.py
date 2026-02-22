@@ -11,7 +11,7 @@ This module provides processing functions for different CAMRa campaigns:
 * **WOEST** (WesCon - Observing the Evolving Structures of Turbulence)
 
   * IOP (Intensive Observation Period)
-  * SOP (Standard Observation Period)
+  * SOP (Standard Operating Period)
   * Other (Other operations)
 
 * **KASBEX** (Ka- and S-band Experiment)
@@ -172,7 +172,7 @@ def process_camra_woest_sop_step1(
     single_sweep: bool = False
 ) -> None:
     """
-    Process CAMRa WOEST SOP (Standard Observation Period) data.
+    Process CAMRa WOEST SOP (Standard Operating Period) data.
     
     SOP processing handles special observation files, typically with
     more intensive scanning strategies.
