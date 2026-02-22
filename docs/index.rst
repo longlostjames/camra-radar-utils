@@ -17,16 +17,16 @@ The library currently supports four field campaigns:
      - Full name
      - Tracking tag
    * - WOEST
-     - WESCON Observing the Evolving Structures of Turbulence
+     - WesCon - Observing the Evolving Structures of Turbulence
      - AMOF_20220922221548
    * - KASBEX
-     - Ka- and S-Band EXperiment
+     - Ka- and S-band Experiment
      - AMOF_20250508133639
    * - CCREST-M
-     - Cloud, Convection and Rain ExperimentS in the Tropics – Maritime
+     - Characterising CiRrus and icE cloud acrosS the specTrum - Microwave
      - AMOF_20230201132601
    * - DYMECS
-     - DYnamics, Microphysics and Entrainment in Convective Systems
+     - Dynamical and microphysical evolution of convective storms
      - CRF_85
 
 .. toctree::

@@ -1,7 +1,7 @@
 WOEST Campaign
 ==============
 
-**WESCON Observing the Evolving Structures of Turbulence**
+**WesCon - Observing the Evolving Structures of Turbulence (WOEST)**
 
 Overview
 --------

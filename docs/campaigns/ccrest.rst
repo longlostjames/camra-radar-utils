@@ -1,7 +1,7 @@
 CCREST-M Campaign
 =================
 
-**Cloud, Convection and Rain ExperimentS in the Tropics – Maritime**
+**Characterising CiRrus and icE cloud acrosS the specTrum - Microwave (CCREST-M)**
 
 Overview
 --------

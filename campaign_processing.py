@@ -8,13 +8,13 @@ Campaign-specific processing functions for CAMRa radar data
 
 This module provides processing functions for different CAMRa campaigns:
 
-* **WOEST** (WESCON Observing the Evolving Structures of Turbulence)
+* **WOEST** (WesCon - Observing the Evolving Structures of Turbulence)
 
   * IOP (Intensive Observation Period)
   * SOP (Standard Observation Period)
   * Other (Other operations)
 
-* **KASBEX** (Ka- and S-Band EXperiment)
+* **KASBEX** (Ka- and S-band Experiment)
 
 * **CCREST-M** (Characterising CiRrus and icE cloud acrosS the specTrum - Microwave)
 
@@ -22,7 +22,7 @@ This module provides processing functions for different CAMRa campaigns:
   * VPT (Vertically Pointing) processing
   * VPT time series processing
 
-* **DYMECS** (DYnamics, Microphysics and Entrainment in Convective Systems)
+* **DYMECS** (Dynamical and microphysical evolution of convective storms)
 
   * RHI and PPI processing
 
@@ -766,7 +766,7 @@ def process_camra_dymecs_day_step1(
     """
     Process CAMRa DYMECS campaign data for a single day - Step 1.
     
-    DYMECS (DYnamics, Microphysics and Entrainment in Convective Systems)
+    DYMECS (Dynamical and microphysical evolution of convective storms)
     processing handles RHI and PPI scans.
     
     Args:

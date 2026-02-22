@@ -1,7 +1,7 @@
 KASBEX Campaign
 ===============
 
-**Ka- and S-Band EXperiment**
+**Ka- and S-band Experiment (KASBEX)**
 
 Overview
 --------

@@ -1,7 +1,7 @@
 DYMECS Campaign
 ===============
 
-**DYnamics, Microphysics and Entrainment in Convective Systems**
+**Dynamical and microphysical evolution of convective storms (DYMECS)**
 
 Overview
 --------
