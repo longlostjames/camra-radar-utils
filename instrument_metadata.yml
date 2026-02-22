@@ -1,0 +1,50 @@
+---
+- ncas-radar-camra-1:
+    # -------------------
+    # Instrument metadata
+    # -------------------
+    nickname: CAMRa (Chilbolton Advanced Meteorological Radar)
+    instrument_name: ncas-radar-camra-1
+    instrument_manufacturer: Rutherford Appleton Laboratory
+    instrument_model: CAMRa
+    instrument_serial_number:  "N/A"
+    instrument_pid: "N/A"
+    instrument_type: radar
+    primary_axis: axis_z
+    latitude: 51.14499 
+    longitude: -1.43841
+    platform:
+        type: stationary_platform
+        deployment_mode: land
+        location_keywords: Chilbolton, Hampshire, England
+        location: cao
+        altitude: 84 m (orthometric height above EGM2008 geoid)
+    altitude:
+       value: 100
+       units: metres
+    altitude_agl: 
+        value: 16
+        units: metres
+    antenna_diameter: 
+        value: 25
+        units: metres
+    radar_parameters:
+        radar_antenna_gain_h:
+            units: dB
+            value:
+        radar_antenna_gain_v:
+            units: dB
+            value:
+        radar_beam_width_h:
+            units: degree
+            value:
+        radar_beam_width_v:
+            units: degree  
+            value:
+        radar_receiver_bandwidth:
+            units: s-1
+            value:
+    radar_calibration:
+    # Note - instrument_software and instrument_software_version are declared in separate YAML project entry     
+    # This allows project specific versions to be specified     
+    references: https://doi.org/10.1049/ecej:19940205; http://purl.org/net/epubs/work/63318; https://doi.org/10.1109/IGARSS.2006.429; https://doi.org/10.3390/atmos10110714;
