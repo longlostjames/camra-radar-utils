@@ -12,6 +12,10 @@ This module provides processing functions for different CAMRa campaigns:
   - SOP (Special Observation Period) 
   - Other (Regular operations)
 - KASBEX (Ka- and S-Band EXperiment)
+- CCREST-M (Cloud, Convection and Rain ExperimentS in the Tropics - Maritime)
+  - Standard RHI processing at specific azimuths
+  - VPT (Vertically Pointing) processing
+  - VPT time series processing
 
 Author: Chris Walden, UK Research & Innovation and
         National Centre for Atmospheric Science
@@ -502,6 +506,237 @@ def find_camra_files(
             print(f"No {scan_type.upper()} files found")
     
     return files_by_scan
+
+
+# CCREST-M PROCESSING FUNCTIONS
+# ===============================
+
+def process_camra_ccrest_day_step1(
+    datestr: str,
+    inpath: str,
+    outpath: str,
+    yaml_project_file: str,
+    yaml_instrument_file: str,
+    data_version: str = "1.0.0",
+    tracking_tag: str = "AMOF_20230201132601",
+    campaign: str = "ccrest-m"
+) -> None:
+    """
+    Process CAMRa CCREST-M campaign data for a single day - Step 1.
+    
+    Processes RHI scans at two different azimuth angles for the CCREST-M campaign:
+    - RHI-CCREST1: 270° azimuth (range 260-280°)
+    - RHI-CCREST2: 246° azimuth (range 236-256°)
+    
+    Args:
+        datestr: Date string in YYYYMMDD format
+        inpath: Input directory path containing raw CAMRa files
+        outpath: Output directory path for processed files
+        yaml_project_file: Path to YAML project configuration file
+        yaml_instrument_file: Path to YAML instrument configuration file
+        data_version: Data version string (default: "1.0.0")
+        tracking_tag: AMOF tracking tag (default: CCREST-M tag)
+        campaign: Campaign name (default: "ccrest-m")
+    """
+    print(f"Processing CAMRa CCREST-M day: {datestr}")
+    
+    # Define the start and end times for the day
+    start_date = datetime.datetime.strptime(datestr, '%Y%m%d')
+    end_date = start_date + datetime.timedelta(days=1)
+    
+    # Find RHI files at 270° azimuth (CCREST1)
+    rhi_files_270 = camra_utils.find_camra_rhi_files(
+        start_date.strftime('%Y-%m-%d %H:%M:%S'),
+        end_date.strftime('%Y-%m-%d %H:%M:%S'),
+        260, 280, inpath
+    )
+    
+    # Find RHI files at 246° azimuth (CCREST2)
+    rhi_files_246 = camra_utils.find_camra_rhi_files(
+        start_date.strftime('%Y-%m-%d %H:%M:%S'),
+        end_date.strftime('%Y-%m-%d %H:%M:%S'),
+        236, 256, inpath
+    )
+    
+    print(f"RHI files at 270°: {len(rhi_files_270)}")
+    print(f"RHI files at 246°: {len(rhi_files_246)}")
+    
+    # Process RHI-CCREST1 (270° azimuth)
+    if len(rhi_files_270) > 0:
+        print("Processing RHI-CCREST1 (270° azimuth)")
+        RadarDS_RHI1 = camra_utils.multi_camra2cfrad(
+            rhi_files_270,
+            outpath,
+            scan_name='RHI-CCREST1',
+            data_version=data_version,
+            tracking_tag=tracking_tag,
+            campaign=campaign
+        )
+    else:
+        print("No RHI files found for CCREST1 (270° azimuth)")
+    
+    # Process RHI-CCREST2 (246° azimuth)
+    if len(rhi_files_246) > 0:
+        print("Processing RHI-CCREST2 (246° azimuth)")
+        RadarDS_RHI2 = camra_utils.multi_camra2cfrad(
+            rhi_files_246,
+            outpath,
+            scan_name='RHI-CCREST2',
+            data_version=data_version,
+            tracking_tag=tracking_tag,
+            campaign=campaign
+        )
+    else:
+        print("No RHI files found for CCREST2 (246° azimuth)")
+    
+    print(f"Completed CCREST-M processing for {datestr}")
+
+
+def process_camra_ccrest_vpt_day_step1(
+    datestr: str,
+    inpath: str,
+    outpath: str,
+    yaml_project_file: str,
+    yaml_instrument_file: str,
+    data_version: str = "1.0.0",
+    tracking_tag: str = "AMOF_20230201132601",
+    campaign: str = "ccrest-m"
+) -> None:
+    """
+    Process CAMRa CCREST-M VPT (Vertically Pointing) data for a single day.
+    
+    Args:
+        datestr: Date string in YYYYMMDD format
+        inpath: Input directory path containing raw CAMRa VPT files
+        outpath: Output directory path for processed files
+        yaml_project_file: Path to YAML project configuration file
+        yaml_instrument_file: Path to YAML instrument configuration file
+        data_version: Data version string (default: "1.0.0")
+        tracking_tag: AMOF tracking tag (default: CCREST-M tag)
+        campaign: Campaign name (default: "ccrest-m")
+    """
+    print(f"Processing CAMRa CCREST-M VPT day: {datestr}")
+    
+    # Define the start and end times for the day
+    start_date = datetime.datetime.strptime(datestr, '%Y%m%d')
+    end_date = start_date + datetime.timedelta(days=1)
+    
+    # Find VPT files for the day
+    try:
+        vpt_files = camra_utils.find_camra_vpt_files(
+            start_date.strftime('%Y-%m-%d %H:%M:%S'),
+            end_date.strftime('%Y-%m-%d %H:%M:%S'),
+            inpath
+        )
+        print(f"Found {len(vpt_files)} VPT files")
+        
+        if len(vpt_files) > 0:
+            RadarDS_VPT = camra_utils.multi_camra2cfrad(
+                vpt_files,
+                outpath,
+                scan_name='fix',
+                data_version=data_version,
+                tracking_tag=tracking_tag,
+                campaign=campaign
+            )
+            print(f"Successfully processed VPT data for {datestr}")
+        else:
+            print(f"No VPT files found for {datestr}")
+            
+    except Exception as e:
+        print(f"VPT processing error for {datestr}: {e}")
+
+
+def process_camra_ccrest_vpt_day_ts(
+    datestr: str,
+    ts_indir: str,
+    mom_indir: str,
+    outdir: str,
+    yaml_project_file: str,
+    yaml_instrument_file: str,
+    data_version: str = "1.0.0",
+    tracking_tag: str = "AMOF_20230201132601"
+) -> None:
+    """
+    Process CAMRa CCREST-M VPT time series data for a single day.
+    
+    This function processes VPT time series data through the following pipeline:
+    1. Convert L0a to L0b
+    2. Convert L0b to L1
+    3. Convert L1 time series to moments
+    
+    Args:
+        datestr: Date string in YYYYMMDD format
+        ts_indir: Input directory path for time series L0a files
+        mom_indir: Input directory path for moment files
+        outdir: Output directory path for processed files
+        yaml_project_file: Path to YAML project configuration file
+        yaml_instrument_file: Path to YAML instrument configuration file
+        data_version: Data version string (default: "1.0.0")
+        tracking_tag: AMOF tracking tag (default: CCREST-M tag)
+    """
+    print(f"Processing CAMRa CCREST-M VPT time series day: {datestr}")
+    
+    # Define the start and end times for the day
+    start_date = datetime.datetime.strptime(datestr, '%Y%m%d')
+    end_date = start_date + datetime.timedelta(days=1)
+    
+    # Set up output paths
+    l0bpath = os.path.join(outdir, 'ts', 'L0b', datestr)
+    l1path = os.path.join(outdir, 'ts', 'L1', datestr)
+    mom_l1a_path = os.path.join(mom_indir, datestr)
+    mom_l1b_path = os.path.join(outdir, 'L1b', datestr)
+    
+    # Step 1: Convert L0a to L0b
+    try:
+        vpt_ts_files_l0a = camra_utils.find_camra_vpt_ts_files(
+            start_date.strftime('%Y-%m-%d %H:%M:%S'),
+            end_date.strftime('%Y-%m-%d %H:%M:%S'),
+            ts_indir,
+            level='l0a'
+        )
+        print(f"Found {len(vpt_ts_files_l0a)} L0a files")
+        
+        if len(vpt_ts_files_l0a) > 0:
+            for f in vpt_ts_files_l0a:
+                camra_utils.convert_camra_ts_l0a2l0b(
+                    f, l0bpath,
+                    tracking_tag=tracking_tag,
+                    data_version=data_version
+                )
+            print("Completed L0a to L0b conversion")
+    except Exception as e:
+        print(f"VPT L0a to L0b conversion error: {e}")
+    
+    # Step 2: Convert L0b to L1
+    try:
+        vpt_ts_files_l0b = camra_utils.find_camra_vpt_ts_files(
+            start_date.strftime('%Y-%m-%d %H:%M:%S'),
+            end_date.strftime('%Y-%m-%d %H:%M:%S'),
+            l0bpath,
+            level='l0b'
+        )
+        print(f"Found {len(vpt_ts_files_l0b)} L0b files")
+        
+        if len(vpt_ts_files_l0b) > 0:
+            for f in vpt_ts_files_l0b:
+                print(f"Converting: {f}")
+                camra_utils.convert_camra_ts_l0b2l1(
+                    f, l1path,
+                    tracking_tag=tracking_tag,
+                    data_version=data_version
+                )
+            print("Completed L0b to L1 conversion")
+    except Exception as e:
+        print(f"VPT L0b to L1 conversion error: {e}")
+    
+    # Step 3: Convert L1 time series to moments
+    try:
+        camra_utils.convert_camra_tsl1tomoments(l1path, mom_l1a_path, mom_l1b_path)
+        print("Completed L1 to moments conversion")
+    except Exception as e:
+        print(f"VPT L1 to moments conversion error: {e}")
+
 
 def process_camra_scan_type(
     files: List[str],
